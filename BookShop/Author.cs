@@ -7,28 +7,31 @@ using System.Threading.Tasks;
 namespace BookShop
 {
 
-    class Author : Edition
+    class Author
     {
-        protected string _name { get; set; }
-        protected DateTime _dateOfBirth { get; set; }
+        string Name { get; set; }
+        string Soname { get; set; }
+        DateTime DateOfBirth { get; set; }
 
         public Author()
         {
-            this._name = "";
-            this._dateOfBirth = DateTime.Now;
+            this.Name = string.Empty;
+            this.Soname = string.Empty;
+            this.DateOfBirth = DateTime.Now;
         }
-        public Author(string name, DateTime dateOfBirth)
+        public Author(string name, string soname, DateTime dateOfBirth)
         {
-            this._name = name;
-            this._dateOfBirth = dateOfBirth;
+            this.Name = name;
+            this.Soname = soname;
+            this.DateOfBirth = dateOfBirth;
         }
         ~Author()
         {
         }
 
-        public override string GetInfo()
+        public string GetInfo()
         {
-            return $"Ім'я автора - {_name}, дата народження - {_dateOfBirth} \n";
+            return $"Ім'я автора - {Name}, Прізвище - {Soname}, дата народження - {DateOfBirth} \n";
         }
 
     }

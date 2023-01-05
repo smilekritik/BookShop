@@ -6,25 +6,30 @@ using System.Threading.Tasks;
 
 namespace BookShop
 {
-    class Book : Edition
+    class Book 
     {
-        protected int _page { get; set; }
-
+        string Name { get; set; }
+        string Genre { get; set; }
+        List<Author> Authors;
         public Book()
         {
-            this._page = 0;
+            this.Name = string.Empty;
+            this.Genre = string.Empty;
+            this.Authors = null;
         }
-        public Book(int page)
+        public Book(string name, string genre, Author author)
         {
-            this._page = page;
+            this.Name = name;
+            this.Genre = genre;
+            this.Authors.Add(author);
         }
         ~Book()
         {
         }
 
-        public override string GetInfo()
+        public string GetInfo()
         {
-            return $"Сторінок в книзі - {_page} \n";
+            return $"Назва книги - {Name}, її жанр - {Genre} \n";
         }
     }
 }

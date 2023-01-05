@@ -12,6 +12,7 @@ namespace BookShop
 {
     public partial class Form1 : Form
     {
+        List<Edition> EditionsAll = new List<Edition>();
         public Form1()
         {
             InitializeComponent();
