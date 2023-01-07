@@ -9,9 +9,9 @@ namespace BookShop
 
     class Author
     {
-        string Name { get; set; }
-        string Soname { get; set; }
-        DateTime DateOfBirth { get; set; }
+        public string Name { get; set; }
+        public string Soname { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         public Author()
         {

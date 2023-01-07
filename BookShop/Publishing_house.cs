@@ -8,7 +8,7 @@ namespace BookShop
 {
     class Publishing_house
     {
-        string Name { get; set; }
+        public string Name { get; set; }
 
         public Publishing_house()
         {

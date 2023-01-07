@@ -8,12 +8,11 @@ namespace BookShop
 {
     class Edition
     {
-
-        Book Book;
-        Publishing_house Publishing_house;
-        string Name { get; set; }
-        decimal Price { get; set; }
-        int Page { get; set; }
+        public Book Book { get; set; }
+        public Publishing_house Publishing_house { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public int Page { get; set; }
 
         public Edition()
         {
@@ -23,16 +22,15 @@ namespace BookShop
             Book = new Book();
             Publishing_house = new Publishing_house();
         }
-        public Edition(string name, decimal price, string authorName, string authorSoname, DateTime authorBirth, string bookName, string bookGenre, int bookPages)
+        public Edition(string name, decimal price, string authorName, string authorSoname, DateTime authorBirth, string bookName, string bookGenre, int bookPages, string publishing_house)
         {
             Name = name;
             Price = price;
             Page = bookPages;
 
-            Author temp = new Author(authorName, authorSoname, authorBirth);
-            Book = new Book(bookName, bookGenre, temp);
+            Book = new Book(bookName, bookGenre, new Author(authorName, authorSoname, authorBirth));
 
-            Publishing_house = new Publishing_house();
+            Publishing_house = new Publishing_house(publishing_house);
         }
         public Edition(Edition edition)
         {

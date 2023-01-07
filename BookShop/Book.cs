@@ -8,20 +8,20 @@ namespace BookShop
 {
     class Book 
     {
-        string Name { get; set; }
-        string Genre { get; set; }
-        List<Author> Authors;
+        public string Name { get; set; }
+        public string Genre { get; set; }
+        public List<Author> Authors = new List<Author>();
         public Book()
         {
             this.Name = string.Empty;
             this.Genre = string.Empty;
-            this.Authors = null;
+            this.Authors = new List<Author>();
         }
         public Book(string name, string genre, Author author)
         {
             this.Name = name;
             this.Genre = genre;
-            this.Authors.Add(author);
+            Authors.Add(author);
         }
         ~Book()
         {
