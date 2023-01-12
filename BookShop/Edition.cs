@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace BookShop
 {
-    class Edition
+    [Serializable]
+    class Edition : IPrintable
     {
+        delegate void ErrorShow();
         public Book Book { get; set; }
         public Publishing_house Publishing_house { get; set; }
         public string Name { get; set; }
@@ -40,7 +42,22 @@ namespace BookShop
             Book = edition.Book;
             Publishing_house = edition.Publishing_house;
         }
-   
+
+        public void PrintsQuery(string type)
+        {
+
+            ErrorShow operation;
+            if (type == "автор")
+            {
+                operation = Book.Authors.FirstOrDefault().GetInfoName;
+            }
+            else
+            {
+                operation = Book.GetInfoName;
+            }
+            operation();
+        }
+
         public string GetInfo()
         {
             return $"{Name} {Price} \n"+ Book.GetInfo()+ Publishing_house.GetInfo();

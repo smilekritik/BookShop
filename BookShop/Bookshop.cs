@@ -19,26 +19,8 @@ namespace BookShop
         public Bookshop()
         {
             InitializeComponent();
-            //public Edition(string name, decimal price, string authorName, string authorSoname, DateTime authorBirth, string bookName, string bookGenre, int bookPages, string publishing_house)
-            
-            
-            Edition edition = new Edition("Відьмак", 319, "Штибор", "Бартош", DateTime.Now, "Тьмяні Спогади", "Фентезі", 104, "Vovkulaka");
-            Editions.Add(edition);
-            edition = new Edition("Токійські месники", 155, "Кен", "Вакуі", DateTime.Now, "Том 1-4", "Шьонен", 192, "Nasha idea");
-            Editions.Add(edition);
-            edition = new Edition("Ранкове сяйво", 319, "Сара", "Джіо", DateTime.Now, "Ранкове сяйво", "Фентезі", 104, "Vivat");
-            Editions.Add(edition);
-
-            Pyblisher.Items.Clear();
-            Pyblisher.Text = "";
-            foreach (var pyblisher in Editions)
-            {
-                if (!Pyblisher.Items.Contains(pyblisher.Publishing_house.Name))
-                {
-                    Pyblisher.Items.Add(pyblisher.Publishing_house.Name);
-                }
-
-            }
+            //IPrintable edition = new Edition("Відьмак", 319, "Штибор", "Бартош", DateTime.Now, "Тьмяні Спогади", "Фентезі", 104, "Vovkulaka");
+            //MessageBox.Show($"{edition.GetInfo()}");
         }
 
         private void Pyblisher_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,7 +63,7 @@ namespace BookShop
             }
             orderInfo.Text = "Ваше замовлення:"
                 + $"\nВидавництво: {temp.Publishing_house.Name}"
-                + $"\nНазва книги: {temp.Name}, жанр - {temp.Book.Genre}, кількість сторіно - {temp.Page}"
+                + $"\nНазва книги: {temp.Name}, жанр - {temp.Book.Genre}, кількість сторінок - {temp.Page}"
                 + $"\nЇї автор: {temp.Book.Authors.FirstOrDefault().Name} {temp.Book.Authors.FirstOrDefault().Soname}"
                 + $"\nЦіна: {temp.Price} гривень";
         }
@@ -119,6 +101,50 @@ namespace BookShop
             {
                 Pyblisher.Items.Add(Box1.Text);
             }
+
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("books.dat", FileMode.Create))
+            {
+                binaryFormatter.Serialize(fs, Editions);
+            }
         }
+
+        private void Bookshop_Load_1(object sender, EventArgs e)
+        {
+            Pyblisher.Items.Clear();
+            Pyblisher.Text = "";
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("books.dat", FileMode.OpenOrCreate))
+            {
+                Editions = (List<Edition>)binaryFormatter.Deserialize(fs);
+
+                //Edition edition = new Edition("Відьмак", 319, "Штибор", "Бартош", DateTime.Now, "Тьмяні Спогади", "Фентезі", 104, "Vovkulaka");
+                //Editions.Add(edition);
+                //edition = new Edition("Токійські месники", 155, "Кен", "Вакуі", DateTime.Now, "Том 1-4", "Шьонен", 192, "Nasha idea");
+                //Editions.Add(edition);
+                //edition = new Edition("Тоgsadgasgegrgsvddvssdsd", 155, "Кен", "Вакуі", DateTime.Now, "Том 1-4", "Шьонен", 192, "Nasha idea");
+                //Editions.Add(edition);
+                //edition = new Edition("Ранкове сяйво", 319, "Сара", "Джіо", DateTime.Now, "Ранкове сяйво", "Фентезі", 104, "Vivat");
+                //Editions.Add(edition);
+
+                foreach (Edition pyblisher in Editions)
+                {
+                    if (!Pyblisher.Items.Contains(pyblisher.Publishing_house.Name))
+                    {
+                        Pyblisher.Items.Add(pyblisher.Publishing_house.Name);
+                    }
+                }
+            }
+        }
+
+        private void Bookshop_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            using (FileStream fs = new FileStream("books.dat", FileMode.Create))
+            {
+                binaryFormatter.Serialize(fs, Editions);
+            }
+        }
+
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookShop
 {
+    [Serializable]
     class Book 
     {
         public string Name { get; set; }
@@ -26,7 +27,10 @@ namespace BookShop
         ~Book()
         {
         }
-
+        public void GetInfoName()
+        {
+            throw new AuthorException("Назва книги містить помилку", string.Empty);
+        }
         public string GetInfo()
         {
             return $"Назва книги - {Name}, її жанр - {Genre} \n";

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookShop
 {
+    [Serializable]
     class Publishing_house
     {
         public string Name { get; set; }

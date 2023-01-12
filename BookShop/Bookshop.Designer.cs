@@ -30,6 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.orderInfo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Editione = new System.Windows.Forms.ComboBox();
             this.Pyblisher = new System.Windows.Forms.ComboBox();
@@ -37,25 +39,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.orderInfo = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.Box1 = new System.Windows.Forms.TextBox();
-            this.Box2 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.Box3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Box4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Box7 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Box8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.Box6 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Box5 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Box8 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Box7 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Box4 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Box3 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Box1 = new System.Windows.Forms.TextBox();
+            this.Box2 = new System.Windows.Forms.TextBox();
+            this.buttonSave = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -90,6 +90,31 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Магазин книг";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button3.Location = new System.Drawing.Point(475, 348);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(278, 38);
+            this.button3.TabIndex = 72;
+            this.button3.Text = "Підтвердити замовлення";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // orderInfo
+            // 
+            this.orderInfo.BackColor = System.Drawing.Color.Bisque;
+            this.orderInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.orderInfo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.orderInfo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.orderInfo.Location = new System.Drawing.Point(471, 51);
+            this.orderInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.orderInfo.Name = "orderInfo";
+            this.orderInfo.Size = new System.Drawing.Size(282, 191);
+            this.orderInfo.TabIndex = 71;
+            this.orderInfo.Click += new System.EventHandler(this.orderInfo_Click);
             // 
             // label2
             // 
@@ -189,154 +214,6 @@
             this.tabPage2.Text = "Додавання книги";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // buttonSave
-            // 
-            this.buttonSave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.buttonSave.Location = new System.Drawing.Point(124, 344);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(162, 78);
-            this.buttonSave.TabIndex = 58;
-            this.buttonSave.Text = "Зберегти";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // orderInfo
-            // 
-            this.orderInfo.BackColor = System.Drawing.Color.Bisque;
-            this.orderInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.orderInfo.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.orderInfo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.orderInfo.Location = new System.Drawing.Point(471, 51);
-            this.orderInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.orderInfo.Name = "orderInfo";
-            this.orderInfo.Size = new System.Drawing.Size(282, 191);
-            this.orderInfo.TabIndex = 71;
-            this.orderInfo.Click += new System.EventHandler(this.orderInfo_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(475, 348);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(278, 38);
-            this.button3.TabIndex = 72;
-            this.button3.Text = "Підтвердити замовлення";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // Box1
-            // 
-            this.Box1.Location = new System.Drawing.Point(155, 23);
-            this.Box1.Name = "Box1";
-            this.Box1.Size = new System.Drawing.Size(131, 20);
-            this.Box1.TabIndex = 70;
-            // 
-            // Box2
-            // 
-            this.Box2.Location = new System.Drawing.Point(155, 70);
-            this.Box2.Name = "Box2";
-            this.Box2.Size = new System.Drawing.Size(131, 20);
-            this.Box2.TabIndex = 71;
-            this.Box2.TextChanged += new System.EventHandler(this.SonameBox_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label5.Location = new System.Drawing.Point(56, 70);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 13);
-            this.label5.TabIndex = 81;
-            this.label5.Text = "Назва видання";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(36, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 13);
-            this.label4.TabIndex = 80;
-            this.label4.Text = "Назва видавницвтва";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(56, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
-            this.label3.TabIndex = 83;
-            this.label3.Text = "Прізвище автора";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Box3
-            // 
-            this.Box3.Location = new System.Drawing.Point(155, 129);
-            this.Box3.Name = "Box3";
-            this.Box3.Size = new System.Drawing.Size(131, 20);
-            this.Box3.TabIndex = 82;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label6.Location = new System.Drawing.Point(56, 170);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 13);
-            this.label6.TabIndex = 85;
-            this.label6.Text = "Ім\'я автора";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Box4
-            // 
-            this.Box4.Location = new System.Drawing.Point(155, 167);
-            this.Box4.Name = "Box4";
-            this.Box4.Size = new System.Drawing.Size(131, 20);
-            this.Box4.TabIndex = 84;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(56, 270);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 87;
-            this.label7.Text = "Ціна";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // Box7
-            // 
-            this.Box7.Location = new System.Drawing.Point(155, 267);
-            this.Box7.Name = "Box7";
-            this.Box7.Size = new System.Drawing.Size(131, 20);
-            this.Box7.TabIndex = 86;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(56, 296);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 13);
-            this.label8.TabIndex = 89;
-            this.label8.Text = "Кількість сторінок";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Box8
-            // 
-            this.Box8.Location = new System.Drawing.Point(155, 293);
-            this.Box8.Name = "Box8";
-            this.Box8.Size = new System.Drawing.Size(131, 20);
-            this.Box8.TabIndex = 88;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -373,6 +250,129 @@
             this.Box5.Size = new System.Drawing.Size(131, 20);
             this.Box5.TabIndex = 90;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(56, 296);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 13);
+            this.label8.TabIndex = 89;
+            this.label8.Text = "Кількість сторінок";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Box8
+            // 
+            this.Box8.Location = new System.Drawing.Point(155, 293);
+            this.Box8.Name = "Box8";
+            this.Box8.Size = new System.Drawing.Size(131, 20);
+            this.Box8.TabIndex = 88;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label7.Location = new System.Drawing.Point(56, 270);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 13);
+            this.label7.TabIndex = 87;
+            this.label7.Text = "Ціна";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // Box7
+            // 
+            this.Box7.Location = new System.Drawing.Point(155, 267);
+            this.Box7.Name = "Box7";
+            this.Box7.Size = new System.Drawing.Size(131, 20);
+            this.Box7.TabIndex = 86;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(56, 170);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 13);
+            this.label6.TabIndex = 85;
+            this.label6.Text = "Ім\'я автора";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Box4
+            // 
+            this.Box4.Location = new System.Drawing.Point(155, 167);
+            this.Box4.Name = "Box4";
+            this.Box4.Size = new System.Drawing.Size(131, 20);
+            this.Box4.TabIndex = 84;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(56, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.TabIndex = 83;
+            this.label3.Text = "Прізвище автора";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Box3
+            // 
+            this.Box3.Location = new System.Drawing.Point(155, 129);
+            this.Box3.Name = "Box3";
+            this.Box3.Size = new System.Drawing.Size(131, 20);
+            this.Box3.TabIndex = 82;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(56, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 13);
+            this.label5.TabIndex = 81;
+            this.label5.Text = "Назва видання";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(36, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 13);
+            this.label4.TabIndex = 80;
+            this.label4.Text = "Назва видавницвтва";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // Box1
+            // 
+            this.Box1.Location = new System.Drawing.Point(155, 23);
+            this.Box1.Name = "Box1";
+            this.Box1.Size = new System.Drawing.Size(131, 20);
+            this.Box1.TabIndex = 70;
+            // 
+            // Box2
+            // 
+            this.Box2.Location = new System.Drawing.Point(155, 70);
+            this.Box2.Name = "Box2";
+            this.Box2.Size = new System.Drawing.Size(131, 20);
+            this.Box2.TabIndex = 71;
+            this.Box2.TextChanged += new System.EventHandler(this.SonameBox_TextChanged);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.buttonSave.Location = new System.Drawing.Point(124, 344);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(162, 78);
+            this.buttonSave.TabIndex = 58;
+            this.buttonSave.Text = "Зберегти";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
             // Bookshop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +383,8 @@
             this.MaximizeBox = false;
             this.Name = "Bookshop";
             this.Text = "Shop";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Bookshop_FormClosing_1);
+            this.Load += new System.EventHandler(this.Bookshop_Load_1);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

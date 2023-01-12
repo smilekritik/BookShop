@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace BookShop
 {
-
+    [Serializable]
     class Author
     {
+       
+
         public string Name { get; set; }
         public string Soname { get; set; }
         public DateTime DateOfBirth { get; set; }
@@ -21,14 +23,31 @@ namespace BookShop
         }
         public Author(string name, string soname, DateTime dateOfBirth)
         {
-            this.Name = name;
-            this.Soname = soname;
+            if (name == "" || soname == "")
+            {
+                if (name == "")
+                {
+                    throw new AuthorException("Ім'я не повинно містити пусті поля", name);
+                }
+                else
+                {
+                    throw new AuthorException("Прізвище не повинно містити пусті поля", soname);
+                }
+            }
+            else
+            {
+                this.Name = name;
+                this.Soname = soname;
+            }
             this.DateOfBirth = dateOfBirth;
         }
         ~Author()
         {
         }
-
+        public void GetInfoName()
+        {
+            throw new AuthorException("Ім'я автора містить помилку", string.Empty);
+        }
         public string GetInfo()
         {
             return $"Ім'я автора - {Name}, Прізвище - {Soname}, дата народження - {DateOfBirth} \n";
